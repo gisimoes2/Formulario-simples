@@ -1,0 +1,43 @@
+<html>
+<head>
+<title> Form 7</title>
+</head>
+<body>
+<center>
+<h1>Cadastro de usuário </h1>
+</center>
+<form method= "post" action="coletar7.php">
+Apelido: <input type="text" name="Apelido" ><br><br>
+Senha:<input type="text" name="senha" >
+Confirmação:<input type="text" name="confirmação" ><br><br>
+Nome:<input type="text" name="nome" ><br><br>
+E-mail:<input type="text" name="Email" ><br><br>
+<input type= "checkbox" name="Feminino" value="Feminino"> Feminino
+<input type= "checkbox" name="Masculino" value= "Masculino"> Masculino 
+<br><br>
+DATA:<select Date="data">
+<option value="">Dia</option>
+<?php
+$dia=1; 
+while ($dia <= 31):
+echo " .$dia";
+$dia++;
+?>
+<option value="">Mês</option>
+<?php 
+$mes=1;
+while ($mes <=12):
+echo ".$mes";
+$mes++
+?>
+<option value="">Ano</option>
+<?php 
+for ($anoInicio = date('Y') - 10; $anoInicio < date('Y'); $anoInicio++)
+       {
+         echo '<option value="'.$anoInicio.'">'.$anoInicio.'</option>';
+       }
+</select>
+?>
+</form>
+</body>
+</html>
